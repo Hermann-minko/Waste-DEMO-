@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://3dwt08qvomjq"]
+
+[ext_resource type="Texture2D" uid="uid://db7ysxl45fqdv" path="res://assets/test_enemy.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://bgnkj7cm0dnnn" path="res://scripts/dummy.gd" id="1_md0e3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1mj"]
+size = Vector2(24, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
+size = Vector2(12, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
+size = Vector2(20, 45)
+
+[node name="Dummy" type="CharacterBody2D"]
+script = ExtResource("1_md0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+scale = Vector2(3, 3)
+texture = ExtResource("1_7p1mj")
+flip_h = true
+
+[node name="body" type="Area2D" parent="." groups=["dummy_body", "enemy"]]
+
+[node name="body_shot" type="CollisionShape2D" parent="body"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_7p1mj")
+
+[node name="head" type="Area2D" parent="." groups=["dummy_head", "enemy"]]
+
+[node name="head_shot" type="CollisionShape2D" parent="head"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_md0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 22.5)
+shape = SubResource("RectangleShape2D_4ra3w")
+
+[connection signal="area_entered" from="body" to="." method="_on_body_area_entered"]
+[connection signal="area_entered" from="head" to="." method="_on_head_area_entered"]

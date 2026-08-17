@@ -14,9 +14,17 @@ script = ExtResource("1_g2els")
 scale = Vector2(3, 3)
 texture = ExtResource("2_dovo2")
 
+[node name="hitbox" type="Area2D" parent="." groups=["player"]]
+
+[node name="hitbox_collide" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(1.5, 22.5)
+shape = SubResource("RectangleShape2D_g2els")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 22.5)
 shape = SubResource("RectangleShape2D_g2els")
 
-[node name="Gun" parent="." instance=ExtResource("3_gmlin")]
+[node name="pistol" parent="." instance=ExtResource("3_gmlin")]
 scale = Vector2(4, 4)
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

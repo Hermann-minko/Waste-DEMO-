@@ -19,11 +19,6 @@ func _process(delta: float) -> void:
 	else:
 		scale.y = 4
 		
-	if rotation_degrees > 0 and rotation_degrees < 180:
-		z_index=1
-	else: 
-		z_index=-1
-		
 #-----------------------------------------------------------------------------------------
 # SHOOT / SHOOT SPEED
 #-----------------------------------------------------------------------------------------

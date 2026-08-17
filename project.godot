@@ -24,6 +24,10 @@ window/stretch/scale=0.5
 window/stretch/scale_mode="integer"
 window/vsync/vsync_mode=0
 
+[global_group]
+
+enemy=""
+
 [input]
 
 left={
