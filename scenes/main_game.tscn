@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://qavurlokbojo"]
 
-[ext_resource type="PackedScene" uid="uid://c40sqlodviq7f" path="res://scenes/player.tscn" id="1_s3esy"]
+[ext_resource type="PackedScene" uid="uid://c40sqlodviq7f" path="res://scenes/player/player.tscn" id="1_s3esy"]
 
 [node name="MainGame" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_s3esy")]
-position = Vector2(567, 313)
+position = Vector2(1411, 538)

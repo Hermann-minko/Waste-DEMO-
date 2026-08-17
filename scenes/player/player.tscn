@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c40sqlodviq7f"]
+
+[ext_resource type="Script" uid="uid://mit0tf1cea6m" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://01r3pw01t40" path="res://assets/player/engineer_idle.png" id="2_dovo2"]
+[ext_resource type="PackedScene" uid="uid://cwrbf843sausf" path="res://scenes/player/pistol.tscn" id="3_gmlin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(21, 45)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_dovo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 22.5)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Gun" parent="." instance=ExtResource("3_gmlin")]
+scale = Vector2(4, 4)

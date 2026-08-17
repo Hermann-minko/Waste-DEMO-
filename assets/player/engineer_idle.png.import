@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn1ffyvjlpd7y"
-path="res://.godot/imported/pistol.png-25ad999fb244d6e6522163977fe47a51.ctex"
+uid="uid://01r3pw01t40"
+path="res://.godot/imported/engineer_idle.png-72b5a53c544c3488b1f1a6c10a1ec75e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pistol.png"
-dest_files=["res://.godot/imported/pistol.png-25ad999fb244d6e6522163977fe47a51.ctex"]
+source_file="res://assets/player/engineer_idle.png"
+dest_files=["res://.godot/imported/engineer_idle.png-72b5a53c544c3488b1f1a6c10a1ec75e.ctex"]
 
 [params]
 

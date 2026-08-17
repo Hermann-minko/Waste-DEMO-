@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://didkewm810vg6"]
+
+[ext_resource type="Script" uid="uid://bkpgrtptf3m7n" path="res://scripts/bullet.gd" id="1_j5eos"]
+[ext_resource type="Texture2D" uid="uid://btecu0un18sol" path="res://assets/player/weapon/bullet.png" id="2_0td6m"]
+[ext_resource type="Script" uid="uid://cgdjwnkobai64" path="res://scripts/trail.gd" id="3_0td6m"]
+
+[sub_resource type="Gradient" id="Gradient_0td6m"]
+offsets = PackedFloat32Array(0.0266667, 0.206667, 0.486667, 1)
+colors = PackedColorArray(1, 1, 1, 0.333333, 1, 1, 1, 0.886275, 1, 1, 0.873333, 1, 1, 1, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5eos"]
+radius = 6.08276
+
+[node name="bullet" type="Area2D"]
+script = ExtResource("1_j5eos")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_0td6m")
+
+[node name="trail" type="Line2D" parent="Sprite2D"]
+top_level = true
+z_index = -2
+width = 2.0
+default_color = Color(1, 1, 0, 1)
+gradient = SubResource("Gradient_0td6m")
+script = ExtResource("3_0td6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j5eos")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(1.6, 1.6)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
